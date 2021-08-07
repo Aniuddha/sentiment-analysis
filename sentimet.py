@@ -15,7 +15,7 @@ blob = TextBlob(data)
 
 
 
-#dividing the paragraph into 5 equal parts and appending it into a list
+#dividing the paragraph into 5 equal parts and appending it into a list-------------------
 def split_text(text, n=5):
     
     length = len(text)
@@ -34,7 +34,7 @@ polarity =[]
 subject = []
 pie = [0,0,0]
 for p in split:
-    polarity.append(TextBlob(p).sentiment.polarity)
+    polarity.append(TextBlob(p).sentiment.polarity) #checkig polarity of a statement-----
     #subject.append(TextBlob(p).sentiment.subjectivity)
 
 print(polarity) #optional dispaly of the 5 polarity segment
@@ -50,7 +50,7 @@ for s in range(5):
 #print(subject)
 plt.rcParams['figure.figsize']= [8,8]
 
-#graph
+#graph------------------------
 plt.subplot(2,1,1)  
 plt.title('Sentiment Analysis', fontsize=15)
 plt.xlabel('<---negative-----positive--->', fontsize= 14)
@@ -59,7 +59,7 @@ plt.plot(polarity)
 #plt.plot(subject) #optional
    
 
-#piechart         
+#piechart-------------------------  
 plt.subplot(2,1,2)      
 mylabels = ["positive", "negtive", ""]
 plt.pie(pie, labels = mylabels, shadow = True)
